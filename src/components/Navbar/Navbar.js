@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { CiDark } from "react-icons/ci";
-import "./Nav.css";
+import "./Navbar.css";
 
 const Nav = () => {
   const [theme, setTheme] = useState("light");
