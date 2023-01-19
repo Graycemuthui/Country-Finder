@@ -9,6 +9,10 @@ const BASE_URL = "https://restcountries.com/v3.1/all";
 // reducer
 export default function countriesReducer(state = [], action) {
   switch (action.type) {
+    case FETCH_COUNTRIES:
+      return action.payload;
+    default:
+      return state;
   }
 }
 
