@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchCountries } from "../../redux/Countries/Countries";
 
-export const DisplayCountries = () => {
+const DisplayCountries = () => {
+  // eslint-disable-next-line
   const countries = useSelector((state) => state.countries);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -20,3 +21,5 @@ export const DisplayCountries = () => {
     </div>
   );
 };
+
+export default DisplayCountries;
