@@ -4,18 +4,27 @@ import { fetchCountries } from "../../redux/Countries/Countries";
 
 const DisplayCountries = () => {
   // eslint-disable-next-line
-  const countries = useSelector((state) => state.countries);
   const dispatch = useDispatch();
+  const countries = useSelector((state) => state.countries);
+  const error = useSelector((state) => state.error);
+
   useEffect(() => {
     dispatch(fetchCountries());
-  }, []);
+  }, [dispatch]);
+
+  console.log(countries);
+
+  if (error) {
+    return <p>Error</p>;
+  }
 
   return (
     <div>
-      {countries.map((country) => (
-        <div key={country.name.common}>
-          <h1>{country.name.common}</h1>
-          <img src={country.flags.png} alt={country.name.common} />
+      {Object.keys(countries).map((country, index) => (
+        <div key={index}>
+          <div>
+            <h1>{country.name}</h1>
+          </div>
         </div>
       ))}
     </div>
