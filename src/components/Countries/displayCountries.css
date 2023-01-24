@@ -1,0 +1,19 @@
+.country-data {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.country-details {
+  box-shadow: inset 0 0 9px #f6eeee;
+  border: 1px solid #fffdfd;
+  padding: 0.5rem;
+  min-height: 100%;
+}
+
+.country-details img {
+  height: 200px;
+  width: 250px;
+}

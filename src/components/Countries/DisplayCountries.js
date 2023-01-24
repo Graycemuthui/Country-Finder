@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchCountries } from "../../redux/Countries/Countries";
+import "./displayCountries.css";
 
 const DisplayCountries = () => {
   // eslint-disable-next-line
@@ -19,18 +20,22 @@ const DisplayCountries = () => {
   }
 
   return (
-    <div>
+    <div className="country-data">
       {countries.map((country, index) => (
         <div key={index}>
-          <div className="country-data">
+          <div className="country-details">
             <div>
               <img src={country.flags.png} alt={country.name.common} />
             </div>
-            <div>
-              <h4>{country.name.common}</h4>
-              <p>{country.population}</p>
-              <p>{country.region}</p>
-              <p>{country.capital}</p>
+            <div className="country-features">
+              <h4>{country.name.common.sort}</h4>
+              <h6>{`Population:` + country.population}</h6>
+              <h6>{`Region:` + country.region}</h6>
+              {country.capital === undefined ? (
+                <h6>{`Capital:` + "No Capital"}</h6>
+              ) : (
+                <h6>{`Capital:` + country.capital}</h6>
+              )}
             </div>
           </div>
         </div>
