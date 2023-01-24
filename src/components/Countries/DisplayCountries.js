@@ -20,10 +20,18 @@ const DisplayCountries = () => {
 
   return (
     <div>
-      {Object.keys(countries).map((country, index) => (
+      {countries.map((country, index) => (
         <div key={index}>
-          <div>
-            <h1>{country.name}</h1>
+          <div className="country-data">
+            <div>
+              <img src={country.flags.png} alt={country.name.common} />
+            </div>
+            <div>
+              <h4>{country.name.common}</h4>
+              <p>{country.population}</p>
+              <p>{country.region}</p>
+              <p>{country.capital}</p>
+            </div>
           </div>
         </div>
       ))}
