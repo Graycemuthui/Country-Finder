@@ -11,12 +11,17 @@ const DisplayCountries = () => {
   const error = useSelector((state) => state.error);
 
   useEffect(() => {
-    dispatch(fetchCountries());
+    fetchCountries()().then = (data) =>
+      console.log(data)(
+        (dispatch({ type: "FETCH_COUNTRIES", payload: data }).catch = (error) =>
+          dispatch({ type: "FETCH_COUNTRIES_ERROR", payload: error }))
+      );
   }, [dispatch]);
 
   if (error) {
     return <p>Error</p>;
   }
+
   return (
     <div className="country-data">
       {countries.map((country, countryId) => (
