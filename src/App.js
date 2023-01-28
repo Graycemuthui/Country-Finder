@@ -8,9 +8,9 @@ const App = () => {
     <div className="App">
       <Router>
         <Nav />
-        <DisplayCountries />
         <Routes>
-          <Route path="/country" element={<Countries />} />
+          <Route path="/*" element={<DisplayCountries />} />
+          <Route path=":countryId" element={<Countries />} />
         </Routes>
       </Router>
     </div>

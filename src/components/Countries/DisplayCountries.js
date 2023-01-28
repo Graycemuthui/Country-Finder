@@ -19,14 +19,14 @@ const DisplayCountries = () => {
   }
   return (
     <div className="country-data">
-      {countries.map((country, index) => (
-        <div key={index}>
+      {countries.map((country, countryId) => (
+        <div key={countryId}>
           <div className="country-details">
-            <div>
-              <Link to="/country">
+            <Link to={`/${countryId}`}>
+              <div>
                 <img src={country.flags.png} alt={country.name.common} />
-              </Link>
-            </div>
+              </div>
+            </Link>
             <div className="country-features">
               <h4>{country.name.common}</h4>
               <h6>{`Population: ${country.population}`}</h6>
