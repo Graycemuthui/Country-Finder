@@ -1,11 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import "./Country.css";
 
 const Country = () => {
   const { countryId } = useParams();
   const countries = useSelector((state) => state.countries);
   const country = countries[countryId];
+  console.log(country);
 
   return (
     <div className="details-page">

@@ -1,0 +1,19 @@
+.details-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 10rem;
+  gap: 2rem;
+}
+
+.details-img img {
+  width: 400px;
+  height: 300px;
+}
+
+.details-headings {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}

@@ -10,7 +10,7 @@ const App = () => {
         <Nav />
         <Routes>
           <Route path="/*" element={<DisplayCountries />} />
-          <Route path=":countryId" element={<Countries />} />
+          <Route path="/:countryId" element={<Countries />} />
         </Routes>
       </Router>
     </div>
