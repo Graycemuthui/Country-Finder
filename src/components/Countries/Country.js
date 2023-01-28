@@ -4,15 +4,27 @@ import { useParams } from "react-router-dom";
 
 const Country = () => {
   const { countryId } = useParams();
+  const countries = useSelector((state) => state.countries);
+  const country = countries[countryId];
 
-  const s = useSelector((state) => state);
-  console.log(s);
   return (
-    <div>
-      {/* <div key={country.id}>
-        <h1>{country.name.common}</h1>
+    <div className="details-page">
+      <div className="details-img">
         <img src={country.flags.png} alt={country.name.common} />
-      </div> */}
+      </div>
+      <div className="details-headings">
+        <h1>{country.name.common}</h1>
+        <h6>{`Population: ${country.population}`}</h6>
+        <h6>{`Region: ${country.region}`}</h6>
+        <h6>{`Subregion: ${country.subregion}`}</h6>
+
+        {country.capital === undefined ? (
+          <h6>{`Capital: No Capital`}</h6>
+        ) : (
+          <h6>{`Capital:${country.capital}`}</h6>
+        )}
+        <h6>{`Top Level Domain: ${country.tld}`}</h6>
+      </div>
     </div>
   );
 };
