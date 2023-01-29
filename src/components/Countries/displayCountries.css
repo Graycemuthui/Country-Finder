@@ -8,7 +8,7 @@
 
 .country-details {
   box-shadow: inset 0 0 9px #f6eeee;
-  border: 1px solid #fffdfd;
+  border: 1px solid #464444;
   padding: 0.5rem;
   min-height: 100%;
 }
@@ -16,4 +16,19 @@
 .country-details img {
   height: 200px;
   width: 250px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+}
+
+.input-container input {
+  padding: 0.2rem;
+  border: 1px solid #130c0c;
+  border-radius: 5px;
+  width: 250px;
+  margin-right: 0.5rem;
 }

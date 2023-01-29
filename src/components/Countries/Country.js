@@ -7,7 +7,6 @@ const Country = () => {
   const { countryId } = useParams();
   const countries = useSelector((state) => state.countries);
   const country = countries[countryId];
-  console.log(country);
 
   return (
     <div className="details-page">
