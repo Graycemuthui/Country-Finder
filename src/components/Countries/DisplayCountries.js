@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchCountries } from "../../redux/Countries/Countries";
 import { useSearchParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import "./displayCountries.css";
+import "./DisplayCountries.css";
 
 const DisplayCountries = () => {
   // eslint-disable-next-line
